@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>4-02_12hour</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>알기 쉽게 날짜/시간 표시하기</h1>
+<h2>12시간 시계 사용</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<p>마지막 접속 일시:<span id="time"></span></p>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var now = new Date();
+var year = now.getFullYear();
+var month = now.getMonth();
+var date = now.getDate();
+var hour = now.getHours();
+var min = now.getMinutes();
+var ampm = '';
+if(hour < 12) {
+	ampm = 'a.m.';
+} else {
+	ampm = 'p.m.';
+}
+var output = year + '/' + (month + 1) + '/' + date + ' ' + (hour % 12) + ':' + min + ampm;
+document.getElementById('time').textContent = output;
+</script>
+</body>
+</html>

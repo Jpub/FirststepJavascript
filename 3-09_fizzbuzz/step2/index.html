@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>3-09_fizzbuzz</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>FizzBuzz</h1>
+<h2>30까지의 수로 FizzBuzz</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var fizzbuzz = function(num) {
+	if(num % 3 === 0 && num % 5 === 0) {
+		return 'fizzbuzz';
+	} else if(num % 3 === 0) {
+		return 'fizz';
+	} else if(num % 5 === 0) {
+		return 'buzz';
+	} else {
+		return num;
+	}
+}
+for(var i = 1; i <= 30; i++) {
+	console.log(fizzbuzz(i));
+}
+</script>
+</body>
+</html>

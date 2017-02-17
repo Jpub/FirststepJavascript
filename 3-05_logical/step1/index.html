@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>3-05_logical</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>시간에 따라 다른 메시지 표시하기</h1>
+<h2>두 가지 이상의 조건을 조합해서 하나의 조건 만들기</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var hour = new Date().getHours();
+
+if(hour >= 19 && hour < 21) {
+	window.alert('도시락 30% 할인!');
+} else if(hour === 9 || hour === 15) {
+	window.alert('도시락 하나 사면 하나 공짜!');
+} else {
+	window.alert('도시락 사세요');
+}
+</script>
+</body>
+</html>

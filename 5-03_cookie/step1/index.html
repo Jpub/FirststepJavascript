@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>5-03_cookie</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>설문지 응답은 한 번만!</h1>
+<h2>쿠기 읽기, 쓰기, 삭제</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<p>영화관에 가시나요?</p>
+	<form id="form" action="thankyou.html">
+		<input type="radio" name="frequency">주에 1회 이상<br>
+		<input type="radio" name="frequency">월에 1회 정도<br>
+		<input type="radio" name="frequency">1년 2~3회 정도<br>
+		<input type="radio" name="frequency">거의 가지 않는다<br>
+		<input type="submit" name="전송하기" id="submit"><br>
+	</form>
+	<button id="remove">쿠기 삭제</button>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script src="../../_common/scripts/js.cookie.js"></script>
+<script>
+document.getElementById('form').onsubmit = function(){
+	if(Cookies.get('answered') === 'yes') {
+		window.alert('이미 응답했습니다. 설문지 응답은 한 번만 가능합니다.');
+		return false;
+	} else {
+		Cookies.set('answered', 'yes', {expires: 7});
+	}
+};
+document.getElementById('remove').onclick = function() {
+	Cookies.remove('answered');
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>6-01_menu</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+<style>
+.submenu h3 {
+	margin: 0 0 1em 0;
+	font-size: 16px;
+	cursor: pointer;
+	color: #5e78c1;
+}
+.submenu h3:hover {
+	color: #b04188;
+	text-decoration: underline;
+}
+.submenu ul {
+	margin: 0 0 1em 0;
+	list-style-type: none;
+	font-size: 14px;
+}
+.hidden {
+	display: none;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>내비게이션 메뉴</h1>
+<h2>jQuery의 기본 마스터하기</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<div class="sidebar">
+		<div class="submenu">
+			<h3>1. Getting Started</h3>
+			<ul class="hidden">
+				<li><a href="">- 개요</a></li>
+				<li><a href="">- 설치</a></li>
+				<li><a href="">- 처음 실행</a></li>
+				<li><a href="">- 제거</a></li>
+			</ul>
+		</div>
+		<div class="submenu">
+			<h3>2. How To Use</h3>
+			<ul class="hidden">
+				<li><a href="">- 기본적인 실행 방법</a></li>
+				<li><a href="">- 원래 상태로 되돌리기</a></li>
+				<li><a href="">- 플러그인 작성</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('.submenu h3').on('click', function(){
+		$(this).next().toggleClass('hidden');
+	});
+});
+</script>
+</body>
+</html>

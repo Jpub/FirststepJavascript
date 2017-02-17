@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>7-02_photo</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+<style>
+img {
+	max-width: 100%;
+}
+#gallery {
+	overflow: hidden;
+	box-sizing: border-box;
+	padding-left: 1px;
+}
+.img_block {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 2px;
+	width: 33.333333%;
+}
+.img_block a {
+	display: block;
+	text-align: bottom;
+	font-size: 0;
+	border: 1px solid #ccc;
+	min-height: 80px;
+	background-image: url(loading.gif);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+.caption {
+	margin: 0 0 1em 0;
+	padding: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 80%;
+	color: #666;
+}
+#pagination {
+	margin: 40px 0 40px 0;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>웹 API를 사용해보자</h1>
+<h2>로딩 표시 붙이기</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<div id="gallery"></div>
+	<div id="pagination"></div>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

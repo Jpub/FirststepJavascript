@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>6-03_ajax</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+<style>
+.list {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.list h2 {
+	margin: 0 0 2em 0;
+	font-size: 16px;
+	text-align: center;
+}
+.seminar {
+	float: left;
+	margin: 10px 10px 10px 0;
+	border: 1px solid #23628f;
+	padding: 4px;
+	width: 25%;
+}
+.check {
+	margin: 0;
+	padding: 8px;
+	font-size: 12px;
+	color: #ffffff;
+	background-color: #23628f;
+	text-align: center;
+	cursor: pointer;
+}
+.red {
+	background-color: #e33a6d;
+}
+.green {
+	background-color: #7bc52e;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>공석 확인</h1>
+<h2>Ajax와 데이터 활용</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<ul class="list">
+		<li class="seminar" id="js">
+			<h2>JavaScript 스터디</h2>
+			<p class="check">공석 상황 확인</p>
+		</li>
+		<li class="seminar" id="security">
+			<h2>보안 대책 강좌</h2>
+			<p class="check">공석 상황 확인</p>
+		</li>
+		<li class="seminar" id="uiux">
+			<h2>UI/UX 경쟁 대회</h2>
+			<p class="check">공석 상황 확인</p>
+		</li>
+	</ul>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+$(document).ready(function(){
+	//파일 읽기
+	$.ajax({url: 'data.json', dataType: 'json'})
+	.done(function(data){
+		$(data).each(function(){
+			if(this.crowded === 'yes') {
+				var idName = '#' + this.id;
+				$(idName).find('.check').addClass('crowded');
+			}
+		});
+	})
+	.fail(function(){
+		window.alert('읽기 오류');
+	});
+
+	//클릭하면 빈 좌석 상태를 표시
+	$('.check').on('click', function(){
+		if($(this).hasClass('crowded')) {
+			$(this).text('약간의 공석').addClass('red');
+		} else {
+			$(this).text('공석이 있습니다').addClass('green');
+		}
+	});
+});
+</script>
+</body>
+</html>

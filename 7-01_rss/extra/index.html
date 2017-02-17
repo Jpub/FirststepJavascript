@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>7-01_rss</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>최신 기사 목록 표시</h1>
+<h2>RSS 피드 불러오기(오프라인 버전）</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+$(document).ready(function(){
+	//var rssURL = "http://jpub.tistory.com/rss";
+	$.ajax({
+		url: 'samplefeed.xml',
+		type: 'GET',
+		dataType: 'xml',
+		data: {
+			//url: rssURL
+		}
+	})
+	.done(function(data){
+		console.log(data);
+	})
+	.fail(function(){
+		window.alert('데이터 불러오기에 실패했습니다.');
+	});
+});
+</script>
+</body>
+</html> 

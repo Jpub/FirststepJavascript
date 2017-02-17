@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>4-03_digit</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>'0'을 붙여서 자릿수 맞추기</h1>
+<h2>곡목 리스트에 번호 붙이기</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<h2>Standards Revival MP3</h2>
+	<div id="list">
+	</div>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var addZero = function(num, digit) {
+	var numString = String(num);
+	while(numString.length < digit) {
+		numString = '0' + numString;
+	}
+	return numString;
+}
+
+var songs = [
+	'Stella By Starlight',
+	'Satin Doll',
+	'Caravan',
+	'Besame Mucho',
+	'My Favorite Things',
+	'Taking A Chance On Love',
+	'Fly Me To The Moon',
+	'Waltz For Debby',
+	'Willow Weep For Me',
+	'Bluesette'
+];
+for(var i = 0; i < songs.length; i++) {
+	var paragraph = document.createElement('p');
+	paragraph.textContent = addZero(i + 1, 2) + '. ' + songs[i];
+	document.getElementById('list').appendChild(paragraph);
+}
+</script>
+</body>
+</html>

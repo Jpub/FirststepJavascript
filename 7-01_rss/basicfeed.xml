@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss>
+	<channel>
+		<title>사이트 제목</title>
+		<atom:link href="http://..." rel="self" type="application/rss+xml" /><!-- 피드의 URL -->
+		<link>http://jpub.tistory.com><!-- 사이트 URL -->
+		<description>사이트 설명</description>
+		<item>
+			<title>기사 타이틀</title>
+			<link>http://www.solidpanda.com/book/news/1914/</link><!-- 기사 링크 -->
+			<pubDate>Mon, 13 Jul 2015 03:52:39 +0000</pubDate><!-- 기사 공개일 -->
+			<dc:creator><![CDATA[기사 작성자]]></dc:creator><!-- 확장 -->
+			<description>기사 설명</description>
+			<content:encoded><![CDATA[기사 내용]]></content:encoded><!-- 확장 -->
+			<!-- 
+			정식으로는：
+			title
+			link
+			description
+			author
+			category
+			comments
+			enclosure
+			guid
+			pubDate
+			source
+			-->
+		</item>
+	</channel>
+</rss>

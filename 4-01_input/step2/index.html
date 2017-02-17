@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>4-01_input</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>폼 입력 내용 가져오기</h1>
+<h2>입력 내용을 읽어서 출력</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<form action="#" id="form">
+		<input type="text" name="word">
+		<input type="submit" value="검색">
+	</form>
+	<p id="output"></p>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+document.getElementById('form').onsubmit = function() {
+	var search = document.getElementById('form').word.value;
+	document.getElementById('output').textContent = '『' + search + '』검색 중...';
+	return false;
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>3-11_object</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+<style>
+table {
+	border-collapse: collapse;
+}
+td {
+	padding: 4px 8px;
+	border: 1px solid #23628f;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>아이템 가격과 재고 표시하기</h1>
+<h2>HTML에 출력하기</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<table>
+		<tr>
+			<td id="title"></td>
+			<td id="price"></td>
+			<td id="stock"></td>
+		</tr>
+	</table>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var jsbook = {title:'자바스크립트 입문', price:2500, stock:3};
+
+document.getElementById('title').textContent = jsbook.title;
+document.getElementById('price').textContent = jsbook.price + '원';
+document.getElementById('stock').textContent = jsbook.stock;
+</script>
+</body>
+</html>

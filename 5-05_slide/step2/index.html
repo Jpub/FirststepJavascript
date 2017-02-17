@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>5-05_slide</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+<style>
+.slide {
+	margin : 0 auto;
+	border: 1px solid black;
+	width: 720px;
+	background-color: black;
+}
+img {
+	max-width: 100%;
+}
+.toolbar {
+	overflow: hidden;
+	text-align: center;
+}
+.nav {
+	display: inline-block;
+}
+#prev {
+	float: left;
+	width: 40px;
+	height: 40px;
+	background: url(images/prev.png) no-repeat;
+}
+#next {
+	float: left;
+	width: 40px;
+	height: 40px;
+	background: url(images/next.png) no-repeat;
+}
+#page {
+	display: inline-block;
+	float: left;
+	margin-top: 8px;
+	height: 32px;
+	color: white;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>슬라이드쇼</h1>
+<h2>몇 장의 이미지를 표시한다</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<div class="slide">
+		<div class="image_box">
+			<img id="main_image" src="images/image1.jpg">
+		</div>
+		<div class="toolbar">
+			<div class="nav">
+				<div id="prev"></div>
+				<span id="page"></span>
+				<div id="next"></div>
+			</div>
+		</div>
+	</div>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var images = ['images/image1.jpg', 'images/image2.jpg', 'images/image3.jpg', 'images/image4.jpg', 'images/image5.jpg'];
+var current = 0;
+var pageNum = function() {
+	document.getElementById('page').textContent = (current + 1) + '/' + images.length;
+}
+var changeImage = function(num) {
+	if(current + num >= 0 && current + num < images.length) {
+		current += num;
+		document.getElementById('main_image').src = images[current];
+		pageNum();
+	}
+};
+
+pageNum();
+
+document.getElementById('prev').onclick = function() {
+	changeImage(-1);
+};
+document.getElementById('next').onclick = function() {
+	changeImage(1);
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>3-04_comparison</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>숫자 맞히기 게임</h1>
+<h2>다양한 비교 연산자를 사용한다</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var number = Math.floor(Math.random() * 6);
+var answer = parseInt(window.prompt('숫자 맞히기 게임. 0~5의 숫자를 입력하세요.'));
+var message;
+if(answer === number) {
+	message = '정답!';
+} else if(answer < number) {
+	message = '땡! 더 큰 숫자입니다!';
+} else if(answer > number) {
+	message = '땡! 더 작은 숫자입니다!';
+} else {
+	message = '0~5의 숫자를 입력하세요.';
+}
+window.alert(message);
+</script>
+</body>
+</html>

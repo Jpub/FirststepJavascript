@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>7-01_rss</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>최신 기사 목록 표시</h1>
+<h2>업데이트 날짜 표시</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<ul id="latest"></ul>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+$(document).ready(function(){
+	var rssURL = "http://jpub.tistory.com/rss";
+	$.ajax({
+		url: 'cdxml.php',
+		type: 'GET',
+		dataType: 'xml',
+		data: {
+			url: rssURL
+		}
+	})
+	.done(function(data){
+		$(data).find('channel item').each(function(){
+			var itemTitle = $(this).find('title').text();
+			var permaLink = $(this).find('link').text();
+
+			var pubText = $(this).find('pubDate').text();
+			var pubDate = new Date(pubText);
+			var dateString = '（' + pubDate.getFullYear() + '/' + (pubDate.getMonth() + 1) + '/' + pubDate.getDate() + '）';
+
+			$('#latest').append(
+				$('<li></li>').append(
+					$('<a></a>')
+					.attr('href', permaLink)
+					.text(itemTitle)
+				)
+				.append(dateString)
+			)
+		});
+	})
+	.fail(function(){
+		window.alert('데이터 불러오기에 실패했습니다.');
+	});
+});
+</script>
+</body>
+</html> 

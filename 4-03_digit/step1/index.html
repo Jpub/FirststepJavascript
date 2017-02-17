@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>4-03_digit</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>'0'을 붙여서 자릿수 맞추기</h1>
+<h2>함수 작성하기</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var addZero = function(num, digit) {
+	var numString = String(num);
+	while(numString.length < digit) {
+		numString = '0' + numString;
+	}
+	return numString;
+}
+
+console.log(addZero(7, 3));
+</script>
+</body>
+</html>

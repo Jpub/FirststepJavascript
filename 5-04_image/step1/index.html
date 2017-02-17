@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>5-04_image</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+<style>
+section img {
+	max-width: 100%;
+}
+.center {
+	margin: 0 auto 0 auto;
+	width: 50%;
+}
+ul {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+li {
+	float: left;
+	margin-right: 1%;
+	width: 24%;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>이미지 변경하기</h1>
+<h2>새로운 HTML 속성 사용</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<div class="center">
+		<div>
+			<img src="img1.jpg" id="bigimg">
+		</div>
+		<ul>
+			<li><img src="thumb-img1.jpg" class="thumb" data-image="img1.jpg"></li>
+			<li><img src="thumb-img2.jpg" class="thumb" data-image="img2.jpg"></li>
+			<li><img src="thumb-img3.jpg" class="thumb" data-image="img3.jpg"></li>
+		</ul>
+	</div>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var thumbs = document.querySelectorAll('.thumb');
+console.log(thumbs);
+for(var i = 0; i < thumbs.length; i++) {
+	thumbs[i].onclick = function() {
+		console.log(this.dataset.image);
+	};
+}
+</script>
+</body>
+</html>

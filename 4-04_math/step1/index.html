@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>4-04_math</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>소수점 O 자리에서 버리기</h1>
+<h2>사칙 연산 이외의 계산이 필요하다</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<p>원주율은
+	<span><script>document.write(Math.PI);</script></span>
+	이다.
+	</p>
+	<p>그냥 버리면
+	<span><script>document.write(Math.floor(Math.PI));</script></span>
+	가 된다.
+	</p>
+	<p>소수점 두 번째 자리에서 버리면<span id="output"></span>이다.</p>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var point = function(num, digit) {
+	var time = Math.pow(10, digit);
+	return Math.floor(num * time) / time;
+}
+
+document.getElementById('output').textContent = point(Math.PI, 2);
+</script>
+</body>
+</html>

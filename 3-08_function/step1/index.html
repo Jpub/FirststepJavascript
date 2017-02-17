@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>3-08_function</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>세금 포함 가격 계산하기</h1>
+<h2>함수 만들기, 호출하기</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var total = function(price) {
+	var tax = 0.08;
+	return price + price * tax;
+}
+
+console.log('커피 기계의 가격은 ' + total(8000) + '원(부가세 포함)입니다.');
+</script>
+</body>
+</html>

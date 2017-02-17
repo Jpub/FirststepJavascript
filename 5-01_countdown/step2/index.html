@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>5-01_countdown</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>카운트다운 타이머</h1>
+<h2>1초 단위로 재계산하기</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	<p>지금부터<span id="timer"></span> 이후에 주문하면 50% 할인!</p>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var countdown = function(due) {
+	var now = new Date();
+
+	var rest = due.getTime() - now.getTime();
+	var sec = Math.floor(rest / 1000 % 60);
+	var min = Math.floor(rest / 1000 / 60) % 60;
+	var hours = Math.floor(rest / 1000 / 60 / 60) % 24;
+	var days = Math.floor(rest / 1000 / 60 / 60 / 24);
+	var count = [days, hours, min, sec];
+
+	return count;
+}
+
+var goal = new Date();
+goal.setHours(23);
+goal.setMinutes(59);
+goal.setSeconds(59);
+
+var recalc = function() {
+	var counter = countdown(goal);
+	var time = counter[1] + '시간' + counter[2] + '분' + counter[3] + '초';
+	document.getElementById('timer').textContent = time;
+	refresh();
+}
+
+var refresh = function() {
+	setTimeout(recalc, 1000);
+}
+recalc();
+</script>
+</body>
+</html>

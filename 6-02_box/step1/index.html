@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>6-02_box</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+<style>
+#box {
+	display: none;
+	margin: 0 auto 0 auto;
+	max-width: 960px;
+}
+#box ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#box li {
+	padding: 8px 0 8px 0;
+	color: #20567d;
+	border-bottom: 1px solid #ffffff;
+}
+.header-contents {
+	position: relative;
+}
+#box_btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-radius: 0 0 8px 8px;
+	padding: 6px 20px 6px 20px;
+	background-color: #fff;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div id="box">
+	<ul>
+		<li>홈</li>
+		<li>회사 안내</li>
+		<li>업무 내용</li>
+		<li>고객 지원</li>
+		<li>문의</li>
+	</ul>
+</div>
+<header>
+<div class="header-contents">
+	<div id="box_btn">Menu</div>
+<h1>박스 열고 닫기</h1>
+<h2>애니메이션 기능 사용</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+	
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#box_btn').on('click', function(){
+		$('#box').slideToggle();
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>3-07_while</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>콘솔로 몬스터를 물리쳐라!</h1>
+<h2>while을 사용해보자</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+<p>대전 상황은 콘솔에서 확인</p>
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var enemy = 100;
+var attack;
+
+window.alert('대전 시작');
+while(enemy > 0) {
+	attack = Math.floor(Math.random() * 30)+1;
+	console.log('몬스터에게 ' + attack + '의 피해를 입혔다!');
+	enemy = enemy - attack;
+}
+console.log('몬스터를 물리쳤다!');
+</script>
+</body>
+</html>
