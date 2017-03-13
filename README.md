@@ -13,6 +13,6 @@
 **시리즈** First Step 시리즈 01  
 **ISBN** 979-11-85890-77-7 (93000)  
 
-[### 도서 소개 페이지 바로 가기 ###](http://jpub.tistory.com/)  
+[### 도서 소개 페이지 바로 가기 ###](http://jpub.tistory.com/661)  
 
 
