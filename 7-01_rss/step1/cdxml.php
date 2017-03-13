@@ -9,3 +9,4 @@ if(isset($_GET["url"]) && preg_match("/^https?:/",$_GET["url"])){
 }else{
     echo "ERROR!";
 }
+?>
